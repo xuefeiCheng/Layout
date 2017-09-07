@@ -327,26 +327,6 @@
 					limit: 100,
 					limits: [100, 300, 500]
 				});
-
-				//将一段数组分页展示
-
-				//调用分页
-				laypage.render({
-					elem: 'demo20',
-					count: data.length,
-					jump: function(obj) {
-						//模拟渲染
-						document.getElementById('biuuu_city_list').innerHTML = function() {
-							var arr = [],
-								thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
-							layui.each(thisData, function(index, item) {
-								arr.push('<li>' + item + '</li>');
-							});
-							return arr.join('');
-						}();
-					}
-				});
-
 			});
 		</script>
 

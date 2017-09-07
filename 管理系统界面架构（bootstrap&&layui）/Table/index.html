@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+
+		<!------------layui------------>
+		<link rel="stylesheet" href="../layui-v2.1.0/layui-v2.1.0/layui/css/layui.css" media="all">
+		<link rel="stylesheet" type="text/css" href="../css/css.css">
+
+		<!------------jquery------------>
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script src="../layui-v2.1.0/layui-v2.1.0/layui/layui.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="layui-tab" lay-filter="test">
+			<ul class="layui-tab-title">
+				<li class="layui-this" lay-id="11">网站设置</li>
+				<li lay-id="22">用户管理</li>
+				<li lay-id="33">权限分配</li>
+				<li lay-id="44">商品管理</li>
+				<li lay-id="55">订单管理</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">内容1</div>
+				<div class="layui-tab-item">内容2</div>
+				<div class="layui-tab-item">内容3</div>
+				<div class="layui-tab-item">内容4</div>
+				<div class="layui-tab-item">内容5</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		window.onload = function() {
+			console.log($(window).height());
+			$("html").css("height", "95%");
+			$("body").css("height", "100%");
+			$("div.layui-tab").css("height", "90%");
+			$("div.layui-tab-content").css("height", "100%");
+			$("div.layui-tab-item").css("height", "90%");
+			$("#mainIframe").css("height", "100%");
+			/*$("#zt-dh").css("height",$(window).height()-114);*/
+		}
+
+		layui.use('element', function() {
+			var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+			//监听导航点击
+			element.on('nav(demo)', function(elem) {
+				//console.log(elem)
+				//layer.msg(elem.text());
+			});
+		});
+	</script>
+	</body>
+
+</html>

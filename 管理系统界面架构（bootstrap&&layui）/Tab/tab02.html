@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户管理</title>
+
+		<!------------layui------------>
+		<link rel="stylesheet" href="../layui-v2.1.0/layui-v2.1.0/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../css/css.css">
+
+		<!------------jquery------------>
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script src="../layui-v2.1.0/layui-v2.1.0/layui/layui.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="layui-form">
+			<table class="layui-table">
+				<!--  <colgroup>
+          <col width="200">
+          <col width="200">
+          <col width="200">
+          <col width="200">
+          <col>
+        </colgroup>-->
+				<thead>
+					<tr>
+						<th>所属校区</th>
+						<th>所有建筑物</th>
+						<th>所属重点部位</th>
+						<th>发生时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>长清校区</td>
+						<td>行政楼</td>
+						<td>该地点不是重点部位</td>
+						<td>2017-08-28 18:27:24</td>
+						<td class="dr">
+							<button data-method="offset" data-type="t" class="layui-btn layui-btn-radius layui-btn-warm">查看详情</button>
+						</td>
+					</tr>
+					<tr>
+						<td>长清校区</td>
+						<td>行政楼</td>
+						<td>该地点不是重点部位</td>
+						<td>2017-08-28 18:27:24</td>
+						<td class="dr">
+							<button data-method="offset" data-type="t" class="layui-btn layui-btn-radius layui-btn-warm">查看详情</button>
+						</td>
+					</tr>
+					<tr>
+						<td>长清校区</td>
+						<td>行政楼</td>
+						<td>该地点不是重点部位</td>
+						<td>2017-08-28 18:27:24</td>
+						<td class="dr">
+							<button data-method="offset" data-type="t" class="layui-btn layui-btn-radius layui-btn-warm">查看详情</button>
+						</td>
+					</tr>
+					<tr>
+						<td>长清校区</td>
+						<td>行政楼</td>
+						<td>该地点不是重点部位</td>
+						<td>2017-08-28 18:27:24</td>
+						<td class="dr">
+							<button data-method="offset" data-type="t" class="layui-btn layui-btn-radius layui-btn-warm">查看详情</button>
+						</td>
+					</tr>
+					<tr>
+						<td>长清校区</td>
+						<td>行政楼</td>
+						<td>该地点不是重点部位</td>
+						<td>2017-08-28 18:27:24</td>
+						<td class="dr">
+							<button data-method="offset" data-type="t" class="layui-btn layui-btn-radius layui-btn-warm">查看详情</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!--查看详情弹窗-->
+		<div id="see_box" style="display:none">
+			<div class="form_list">
+				<form class="layui-form" action="">
+					<div class="layui-row">
+						<div class="layui-col-xs6">
+							<div class="grid-demo grid-demo-bg1">
+
+								<div class="layui-form-item">
+									<label class="layui-form-label">单行输入框</label>
+									<div class="layui-input-block">
+										<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+									</div>
+								</div>
+
+								<div class="layui-form-item">
+									<label class="layui-form-label">验证必填项</label>
+									<div class="layui-input-block">
+										<input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+
+								<div class="layui-form-item">
+									<label class="layui-form-label">单行选择框</label>
+									<div class="layui-input-block">
+										<select name="interest" lay-filter="aihao">
+											<option value=""></option>
+											<option value="0">写作</option>
+											<option value="1" selected="">阅读</option>
+											<option value="2">游戏</option>
+											<option value="3">音乐</option>
+											<option value="4">旅行</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="layui-form-item" pane="">
+									<label class="layui-form-label">原始复选框</label>
+									<div class="layui-input-block">
+										<input type="checkbox" name="like1[write]" lay-skin="primary" title="写作" checked="">
+										<input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+										<input type="checkbox" name="like1[game]" lay-skin="primary" title="游戏" disabled="">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="layui-col-xs6">
+							<div class="grid-demo">
+
+								<div class="layui-form-item">
+									<label class="layui-form-label">单行输入框</label>
+									<div class="layui-input-block">
+										<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+									</div>
+								</div>
+								<div class="layui-form-item">
+									<label class="layui-form-label">多规则验证</label>
+									<div class="layui-input-inline">
+										<input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<div class="layui-form-item">
+									<div class="layui-inline">
+										<label class="layui-form-label">验证日期</label>
+										<div class="layui-input-inline">
+											<input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</div>
+								<div class="layui-form-item">
+									<label class="layui-form-label">单行输入框</label>
+									<div class="layui-input-block">
+										<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+					<div class="layui-row tj_btn">
+						<button class="layui-btn layui-btn-radius">提交</button>
+						<!--<button class="layui-btn layui-btn-primary layui-btn-radius">关闭</button>-->
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div id="demo2"></div>
+
+		<!--弹窗-->
+		<script>
+			layui.use('layer', function() { //独立版的layer无需执行这一句
+				var $ = layui.jquery,
+					layer = layui.layer; //独立版的layer无需执行这一句
+
+				//触发事件
+				var active = {
+					offset: function(othis) {
+						var type = othis.data('type')
+						layer.open({
+							type: 1,
+							offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+								,
+							area: ['686px', 'auto'],
+							id: 'layerDemo' + type //防止重复弹出
+								,
+							content: $('#see_box')
+								/*,btn: '关闭全部'*/
+								,
+							btnAlign: 'c' //按钮居中
+								,
+							shade: 0 //不显示遮罩
+								,
+							yes: function() {
+								layer.closeAll();
+							}
+						});
+					}
+				};
+
+				$('.layui-btn').on('click', function() {
+					var othis = $(this),
+						method = othis.data('method');
+					active[method] ? active[method].call(this, othis) : '';
+				});
+
+			});
+		</script>
+
+		<!--分页-->
+		<script>
+			layui.use(['laypage', 'layer'], function() {
+				var laypage = layui.laypage,
+					layer = layui.layer;
+
+				//总页数低于页码总数
+				laypage.render({
+					elem: 'demo0',
+					count: 50 //数据总数
+				});
+
+				//总页数大于页码总数
+				laypage.render({
+					elem: 'demo1',
+					count: 70 //数据总数
+						,
+					jump: function(obj) {
+						console.log(obj)
+					}
+				});
+
+				//自定义样式
+				laypage.render({
+					elem: 'demo2',
+					count: 100,
+					theme: '#057db5'
+				});
+				laypage.render({
+					elem: 'demo2-1',
+					count: 100,
+					theme: '#FF5722'
+				});
+				laypage.render({
+					elem: 'demo2-2',
+					count: 100,
+					theme: '#FFB800'
+				});
+
+				//自定义首页、尾页、上一页、下一页文本
+				laypage.render({
+					elem: 'demo3',
+					count: 100,
+					first: '首页',
+					last: '尾页',
+					prev: '<em>←</em>',
+					next: '<em>→</em>'
+				});
+
+				//不显示首页尾页
+				laypage.render({
+					elem: 'demo4',
+					count: 100,
+					first: false,
+					last: false
+				});
+
+				//开启HASH
+				laypage.render({
+					elem: 'demo5',
+					count: 500,
+					curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+						,
+					hash: 'fenye' //自定义hash值
+				});
+
+				//只显示上一页、下一页
+				laypage.render({
+					elem: 'demo6',
+					count: 50,
+					layout: ['prev', 'next'],
+					jump: function(obj, first) {
+						if(!first) {
+							layer.msg('第 ' + obj.curr + ' 页');
+						}
+					}
+				});
+
+				//完整功能
+				laypage.render({
+					elem: 'demo7',
+					count: 100,
+					layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'],
+					jump: function(obj) {
+						console.log(obj)
+					}
+				});
+
+				//自定义排版
+				laypage.render({
+					elem: 'demo8',
+					count: 1000,
+					layout: ['limit', 'prev', 'page', 'next']
+				});
+				laypage.render({
+					elem: 'demo9',
+					count: 1000,
+					layout: ['prev', 'next', 'page']
+				});
+				laypage.render({
+					elem: 'demo10',
+					count: 1000,
+					layout: ['page', 'count']
+				});
+
+				//自定义每页条数的选择项
+				laypage.render({
+					elem: 'demo11',
+					count: 1000,
+					limit: 100,
+					limits: [100, 300, 500]
+				});
+
+				//将一段数组分页展示
+
+				//调用分页
+				laypage.render({
+					elem: 'demo20',
+					count: data.length,
+					jump: function(obj) {
+						//模拟渲染
+						document.getElementById('biuuu_city_list').innerHTML = function() {
+							var arr = [],
+								thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+							layui.each(thisData, function(index, item) {
+								arr.push('<li>' + item + '</li>');
+							});
+							return arr.join('');
+						}();
+					}
+				});
+
+			});
+		</script>
+
+		<!--input和下拉框-->
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+
+				//日期
+				laydate.render({
+					elem: '#date'
+				});
+				laydate.render({
+					elem: '#date1'
+				});
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+
+				//自定义验证规则
+				form.verify({
+					title: function(value) {
+						if(value.length < 5) {
+							return '标题至少得5个字符啊';
+						}
+					},
+					pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					content: function(value) {
+						layedit.sync(editIndex);
+					}
+				});
+
+				//监听指定开关
+				form.on('switch(switchTest)', function(data) {
+					layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+						offset: '6px'
+					});
+					layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+				});
+
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+
+			});
+		</script>
+
+	</body>
+
+</html>

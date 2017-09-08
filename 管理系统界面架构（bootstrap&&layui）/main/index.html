@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/css.css">
 
 		<!------------jquery------------>
-		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script src="../layui-v2.1.0/layui-v2.1.0/layui/layui.js" charset="utf-8"></script>
 	</head>
 
@@ -42,13 +42,13 @@
 						<dl class="layui-nav-child">
 							<dd class="layui-this">
 								<!--<a href="javascript:;" ng-click="geturl('${m.url }')">${c.categoryName }</a>-->
-								<a href="javascript:;" rel="../Tab/index.html" onclick="goUrl(this)">选项卡</a>
+								<a href="#tab" rel="../Tab/index.html" onclick="goUrl(this)">选项卡</a>
 							</dd>
 							<dd>
-								<a href="javascript:;" rel="../Table/index.html" onclick="goUrl(this)">表格</a>
+								<a href="#table" rel="../Table/index.html" onclick="goUrl(this)">表格</a>
 							</dd>
 							<dd>
-								<a href="javascript:;" rel="../From/index.html" onclick="goUrl(this)">表单</a>
+								<a href="#from" rel="../From/index.html" onclick="goUrl(this)">表单</a>
 							</dd>
 							<dd>
 								<a href="javascript:;">按钮</a>
@@ -59,7 +59,7 @@
 						<a href="javascript:;">系统常用[bootstrap]</a>
 						<dl class="layui-nav-child">
 							<dd>
-								<a href="javascript:;">选项一</a>
+								<a href="#model" rel="../Model/index.html" onclick="goUrl(this)">模态框</a>
 							</dd>
 							<dd>
 								<a href="javascript:;">选项二</a>
@@ -89,16 +89,18 @@
 				$("iframe").css("height", $(window).height() - 120);
 				$("#zt-dh").css("height", $(window).height() - 115);
 			}
-			function goUrl(url){
-//				alert(url.rel);
-				$("iframe").attr('src',url.rel);
+
+			function goUrl(url) {
+				//				alert(url.rel);
+				$("iframe").attr('src', url.rel);
 			}
 			layui.use('element', function() {
 				var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
 
 				//监听导航点击
 				element.on('nav(demo)', function(elem) {
-					//console.log(elem)
+					
+					console.log(elem.context.baseURI);
 					//layer.msg(elem.text());
 				});
 			});

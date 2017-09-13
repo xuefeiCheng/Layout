@@ -48,8 +48,27 @@ angular.module('app')
                         //}
                         controller: 'homeCtrl',
                         templateUrl: 'tpl/blocks/home.html',
+                        resolve:load(['css/common.css','css/main.css', 'css/change.css','js/libs/modernizr.min.js'])
                         // use resolve to load other dependences
                        /* resolve: load(['css/home.css'])*/
+                    })
+                    .state('app.design', {
+                    	url: '/design',
+                       /* controller: 'designCtrl',*/
+                        templateUrl: 'tpl/design.html',
+                        resolve:load(['css/common.css','css/main.css', 'css/change.css','js/libs/modernizr.min.js'])
+                    })
+                     .state('app.insert', {
+                    	 url: '/insert',
+                        /*controller: 'insertCtrl',*/
+                        templateUrl: 'tpl/insert.html',
+                        resolve:load(['css/common.css','css/main.css', 'css/change.css','js/libs/modernizr.min.js'])
+                    })
+                      .state('app.system', {
+                    	 url: '/system',
+                        /*controller: 'systemCtrl',*/
+                        templateUrl: 'tpl/system.html',
+                        resolve:load(['css/common.css','css/main.css', 'css/change.css','js/libs/modernizr.min.js'])
                     })
                     //个人信息 管理
                     .state('app.information', {

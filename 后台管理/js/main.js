@@ -17,12 +17,23 @@ angular.module('app')
 });
 angular.module('app')
     .controller("AppCtrl",["$scope","$state",function($scope,$state){
-      /*  $scope.$on("USER",function(event,data){
-            console.log("ssss");
-            console.log(data);
-            $scope.$broadcast("child",{data:data})
-        });*/
+       //	$scope.isThis = true;
+       /*接收*/
+        $scope.$on("FromChild", function (event, data) {
+        	/*$scope.isThis = data.status;*/
+        	/*alert(data.description);*/
+        	$("#index").click();
+      });
+      //发布
+     /* $scope.$broadcast("child",{data:data})*/
     }])
+     .controller("systemCtrl",["$scope","$state",function($scope,$state){
+     	$scope.goSub = function(url){
+      		$state.go(url);
+      		/*向上发布*/
+      		$scope.$emit("FromChild", { status: false, description: "更改选中状态" });
+     	}
+     }])
     .controller("LoginCtrl",["$scope","$state","$http","$location",function($scope,$state,$http,$location){
         //$location.reload();
         $scope.reloadRoute = function () {
@@ -347,7 +358,6 @@ angular.module('app')
         }
     })
     .controller("homeCtrl",function($scope,$state,$http,$stateParams){
-
         function $(id){return document.getElementById(id);}
         //free();
         function free(){

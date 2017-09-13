@@ -66,7 +66,7 @@ angular.module('app')
                     })
                       .state('app.system', {
                     	 url: '/system',
-                        /*controller: 'systemCtrl',*/
+                        controller: 'systemCtrl',
                         templateUrl: 'tpl/system.html'
                        
                     })

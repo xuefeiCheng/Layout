@@ -1,5 +1,5 @@
 /**
- * Created by cxf on 2016/9/26.
+ * Created by xuefeiCheng on 2017/9/13
  */
 
 //自定义 服务  用于加载 Echars图
@@ -17,11 +17,11 @@ angular.module('app')
 });
 angular.module('app')
     .controller("AppCtrl",["$scope","$state",function($scope,$state){
-        $scope.$on("USER",function(event,data){
+      /*  $scope.$on("USER",function(event,data){
             console.log("ssss");
             console.log(data);
             $scope.$broadcast("child",{data:data})
-        });
+        });*/
     }])
     .controller("LoginCtrl",["$scope","$state","$http","$location",function($scope,$state,$http,$location){
         //$location.reload();

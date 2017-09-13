@@ -1,30 +1,10 @@
 /**
- * Created by cxf on 2016/9/23.
+ * Created by xuefeiCheng on 2017/9/13
  */
 
 //自定义路由
 //angular.module('app', ['ui.router'])
 angular.module('app')
-    .run(['$rootScope', '$window', '$state', '$location','$stateParams', '$log','$templateCache', function ($rootScope,$stateParams,$state, $window, $location, $log,$templateCache) {
-        //监测路由的变化
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
-        $rootScope.$on('$stateChangeSuccess',
-            function(event, toState, toParams, fromState, fromParams){
-                if(toState.name=="login"){
-                    //alert("调转页面了");
-                    //window.location.reload();
-                    //$location.reload();
-                    $templateCache.removeAll();
-                }
-            });
-        //var stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
-        //
-        //function stateChangeSuccess($rootScope) {
-        //    $templateCache.removeAll();
-        //}
-
-    }])
     .config(
         [ '$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG',
             function ($stateProvider,   $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {

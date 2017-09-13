@@ -1,0 +1,47 @@
+<div class="layui-side layui-bg-black">
+	<div class="layui-side-scroll">
+		<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+		<ul class="layui-nav layui-nav-tree" lay-filter="test">
+			<li class="layui-nav-item layui-nav-itemed">
+				<a href="javascript:;">常用操作</a>
+				<dl class="layui-nav-child">
+					<dd>
+						<a ui-sref="app.home.caozuo">文章管理</a>
+					</dd>
+					<dd>
+						<a href="javascript:;">广告管理</a>
+					</dd>
+					<dd>
+						<a href="javascript:;">分类管理</a>
+					</dd>
+				</dl>
+			</li>
+			<li class="layui-nav-item layui-nav-itemed">
+				<a href="javascript:;">系统管理</a>
+				<dl class="layui-nav-child">
+					<dd>
+						<a ui-sref="app.system">系统设置</a>
+					</dd>
+					<dd>
+						<a href="javascript:;">数据管理</a>
+					</dd>
+				</dl>
+			</li>
+			<li class="layui-nav-item layui-nav-itemed">
+				<a href="javascript:;">公告管理</a>
+				<dl class="layui-nav-child">
+					<dd>
+						<a ui-sref="app.system">公告发布</a>
+					</dd>
+					<dd>
+						<a href="javascript:;">公告维护</a>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="layui-body">
+	<ui-view></ui-view>
+</div>

@@ -11,46 +11,26 @@ angular.module('app')
                 var layout = "tpl/blocks/home.layout.html";
                 $urlRouterProvider
                     //路由重定向
-                    .otherwise('app/home');
+                    .otherwise('/app/home/default');
 
                 $stateProvider
-                    .state('login', {
-                        url: '/login',
-                        cache:'false',//禁止页面缓存
-                        controller: 'LoginCtrl',
-                        templateUrl: 'login-cxf.html',
-                        resolve:load(['css/login.css'])
-                    })
                     .state('app', {
                         abstract: true,
                         url: '/app',
                         templateUrl: layout
-                       /* resolve:load(['css/common.css','css/main.css', 'js/libs/modernizr.min.js'])*/
                     })
                     //首页
                     .state('app.home', {
-                    	 url: '/home',
-                    	/*在父亲controller中传递过来*/
-                    	/* $state.go('app.home',{UserId:data.user_id,roleId:data.role.id});*/
-                    	/*在子controller中接收*/
-                       /* url: '/home/:UserId/:roleId',*/
-                       /* 接收方式$stateParams.UserId*/
-                        //多个 view的视图设置
-                        //views: {
-                        //    "header_view": {
-                        //        controller:"headerCtrl",
-                        //        templateUrl: 'tpl/blocks/home.header.html'
-                        //    },
-                        //    "": {
-                        //        controller:'homeCtrl',
-                        //        templateUrl: 'tpl/blocks/home.html'
-                        //    }
-                        //}
+                    	url: '/home',
+                    	 abstract: true,
                         controller: 'homeCtrl',
-                        templateUrl: 'tpl/blocks/home.html'
-                       /* resolve:load(['css/common.css','css/main.css', 'css/change.css','js/libs/modernizr.min.js'])*/
-                        // use resolve to load other dependences
-                       /* resolve: load(['css/home.css'])*/
+                        templateUrl: 'tpl/main/index.html'
+                    })
+                    /*首页便捷操作*/
+                    .state('app.home.default', {
+                    	 url: '/default',
+                       /* controller: 'homeCtrl',*/
+                        templateUrl: 'tpl/details/home.html'
                     })
                     .state('app.design', {
                     	url: '/design',
